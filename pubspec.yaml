@@ -12,8 +12,14 @@ dependencies:
   shared_preferences:
   url_launcher:
   dio:
+  flutter_launcher_icons:
   flutter: 
     sdk: flutter
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/horecah.png"
 
 dev_dependencies: 
   flutter_lints: ^2.0.0

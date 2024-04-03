@@ -103,29 +103,32 @@ class FromonescreenView extends GetView<FromonescreenController> {
                               }
                             },
                           ),
-                          DropDownField.formDropDown1WidthMap(
-                            [
-                              DropDownValue(key: "Chennai", value: "Chennai"),
-                              DropDownValue(key: "Rajasthan", value: "Rajasthan"),
-                              DropDownValue(key: "Bengaluru", value: "Bengaluru"),
-                              DropDownValue(key: "MP", value: "MP"),
-                            ],
-                                (value) {
-                              controller.selectedCity = value;
-                              if (controller.allValidation(checkingBtnVisibility: true)) {
-                                controller.isBtnEnable.value = true;
-                                controller.isBtnEnable.refresh();
-                              } else {
-                                controller.isBtnEnable.value = false;
-                                controller.isBtnEnable.refresh();
-                              }
-                            },
-                            "Current City",
-                            .9,
-                            // isEnable: controllerX.isEnable,
-                            selected: controller.selectedCity,
-                            dialogHeight: Get.height * .55,
-                            autoFocus: true,
+                          SizedBox(
+                            width: Get.width*0.9,
+                            child: DropDownField.formDropDown1WidthMap(
+                              [
+                                DropDownValue(key: "Chennai", value: "Chennai"),
+                                DropDownValue(key: "Rajasthan", value: "Rajasthan"),
+                                DropDownValue(key: "Bengaluru", value: "Bengaluru"),
+                                DropDownValue(key: "MP", value: "MP"),
+                              ],
+                                  (value) {
+                                controller.selectedCity = value;
+                                if (controller.allValidation(checkingBtnVisibility: true)) {
+                                  controller.isBtnEnable.value = true;
+                                  controller.isBtnEnable.refresh();
+                                } else {
+                                  controller.isBtnEnable.value = false;
+                                  controller.isBtnEnable.refresh();
+                                }
+                              },
+                              "Current City",
+                              .9,
+                              // isEnable: controllerX.isEnable,
+                              selected: controller.selectedCity,
+                              dialogHeight: Get.height * .55,
+                              autoFocus: true,
+                            ),
                           )
 
                         ],
