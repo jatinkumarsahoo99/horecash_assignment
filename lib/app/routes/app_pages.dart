@@ -8,6 +8,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/profilescreen/bindings/profilescreen_binding.dart';
 import '../modules/profilescreen/views/profilescreen_view.dart';
+import '../modules/splashscreen/bindings/splashscreen_binding.dart';
+import '../modules/splashscreen/views/splashscreen_view.dart';
 
 part 'app_routes.dart';
 
@@ -34,8 +36,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILESCREEN,
-      page: () =>  ProfilescreenView(),
+      page: () => ProfilescreenView(),
       binding: ProfilescreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASHSCREEN,
+      page: () => const SplashscreenView(),
+      binding: SplashscreenBinding(),
     ),
   ];
 }

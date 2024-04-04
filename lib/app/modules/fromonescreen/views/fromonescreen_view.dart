@@ -129,6 +129,9 @@ class FromonescreenView extends GetView<FromonescreenController> {
                               dialogHeight: Get.height * .55,
                               autoFocus: true,
                             ),
+                          ),
+                          SizedBox(
+                            height: 5,
                           )
 
                         ],

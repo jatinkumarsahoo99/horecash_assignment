@@ -7,6 +7,7 @@ abstract class Routes {
   static const FROMONESCREEN = _Paths.FROMONESCREEN;
   static const FROMTWOSCREEN = _Paths.FROMTWOSCREEN;
   static const PROFILESCREEN = _Paths.PROFILESCREEN;
+  static const SPLASHSCREEN = _Paths.SPLASHSCREEN;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const FROMONESCREEN = '/fromonescreen';
   static const FROMTWOSCREEN = '/fromtwoscreen';
   static const PROFILESCREEN = '/profilescreen';
+  static const SPLASHSCREEN = '/splashscreen';
 }
