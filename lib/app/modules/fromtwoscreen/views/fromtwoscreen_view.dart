@@ -39,26 +39,30 @@ class FromtwoscreenView extends GetView<FromtwoscreenController> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    CommonTextFieldView1(
-                      controller: controller.aboutTextEditingController,
-                      errorText: "",
-                      titleText: "About",
-                      borderRadius: 8,
-                      height: 140,
-                      // padding: const EdgeInsets.only(left: 18, right: 18, bottom: 8),
-                      hintText:
-                      "Enter about",
-                      keyboardType: TextInputType.text,
-                      onChanged: (String txt) {
-                        if (controller.allValidation()) {
-                          controller.isBtnEnable.value = true;
-                          controller.isBtnEnable.refresh();
-                        } else {
-                          controller.isBtnEnable.value = false;
-                          controller.isBtnEnable.refresh();
-                        }
-                      },
-                    ),
+                    Obx(() {
+                      return CommonTextFieldView1(
+                        controller: controller.aboutTextEditingController,
+                        errorText: "",
+                        titleText: "About",
+                        focusNode: controller.aboutFocusNode,
+                        borderRadius: 8,
+                        height: 140,
+                        // padding: const EdgeInsets.only(left: 18, right: 18, bottom: 8),
+                        hintText:
+                        "Enter about",
+                        enable: controller.isAboutEnable.value,
+                        keyboardType: TextInputType.text,
+                        onChanged: (String txt) {
+                          if (controller.allValidation()) {
+                            controller.isBtnEnable.value = true;
+                            controller.isBtnEnable.refresh();
+                          } else {
+                            controller.isBtnEnable.value = false;
+                            controller.isBtnEnable.refresh();
+                          }
+                        },
+                      );
+                    }),
                     SizedBox(
                       height: 7,
                     ),
@@ -76,6 +80,11 @@ class FromtwoscreenView extends GetView<FromtwoscreenController> {
                             backgroundColor: const Color(0xFF002351),
                             iconColor: Colors.orange,
                             onTap: () {
+                              controller.isAboutEnable.value = false;
+                              controller.isAboutEnable.refresh();
+
+                              controller.aboutTextEditingController.text = "I am ${controller.profileDetailsModel?.name??""} from ${controller.profileDetailsModel?.city??""}. \nContact Details:\nMob:${controller.profileDetailsModel?.mobileNumber??""}\nEmail:${controller.profileDetailsModel?.email??""}";
+
                               // NavigationServices(context).gotoTabScreen();
                             },
                           ),
@@ -92,6 +101,10 @@ class FromtwoscreenView extends GetView<FromtwoscreenController> {
 
 
                             onTap: () {
+                              controller.aboutFocusNode.requestFocus();
+                              controller.isAboutEnable.value = true;
+                              controller.isAboutEnable.refresh();
+
                               // NavigationServices(context).gotoTabScreen();
                             },
                           ),

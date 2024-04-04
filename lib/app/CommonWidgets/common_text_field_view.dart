@@ -135,6 +135,7 @@ class CommonTextFieldView1 extends StatelessWidget {
   final double? height;
   final double? borderRadius;
   final BuildContext? contextNew;
+  final FocusNode? focusNode;
 
    CommonTextFieldView1({
     Key? key,
@@ -153,6 +154,7 @@ class CommonTextFieldView1 extends StatelessWidget {
      this.contextNew,
      this.height,
      this.borderRadius,
+     this.focusNode,
      this.enable = true
   }) : super(key: key);
 
@@ -179,6 +181,7 @@ class CommonTextFieldView1 extends StatelessWidget {
             shadowColor: Colors.grey.withOpacity(
               Theme.of(context).brightness == Brightness.dark ? 0.6 : 0.6,
             ),
+            color: (enable == false)?Colors.grey:null,
             child: Padding(
               padding:  EdgeInsets.only(left: pad!, right:  pad!),
               child: SizedBox(
@@ -186,6 +189,7 @@ class CommonTextFieldView1 extends StatelessWidget {
                 child: Center(
                   child: TextField(
                     controller: controller,
+                    focusNode: focusNode??FocusNode(),
                     // maxLines: 1,
                     maxLines: null,
                     enabled: enable,

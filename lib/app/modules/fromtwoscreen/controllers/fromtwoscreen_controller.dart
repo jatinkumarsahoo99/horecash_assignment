@@ -21,6 +21,8 @@ class FromtwoscreenController extends GetxController with Helper {
   String errorAbout = '';
   String errorPortFolioLink = '';
   Rx<bool> isBtnEnable= Rx<bool>(false);
+  Rx<bool> isAboutEnable= Rx<bool>(false);
+  FocusNode aboutFocusNode = FocusNode();
 
 
   bool allValidation() {
