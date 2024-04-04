@@ -13,6 +13,8 @@ dependencies:
   url_launcher:
   dio:
   flutter_launcher_icons:
+  flutter_gemini:
+  flutter_spinkit:
   flutter: 
     sdk: flutter
 

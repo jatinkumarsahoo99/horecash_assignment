@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 
 import 'package:get/get.dart';
 
@@ -10,6 +11,8 @@ import 'app/routes/app_pages.dart';
 void main() {
 
   WidgetsFlutterBinding.ensureInitialized();
+
+  Gemini.init(apiKey:'AIzaSyCTrq-spWYNva2Zftw2WDA4lHqn-7yGRTA');
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,

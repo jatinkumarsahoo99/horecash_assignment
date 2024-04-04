@@ -82,8 +82,9 @@ class FromtwoscreenView extends GetView<FromtwoscreenController> {
                             onTap: () {
                               controller.isAboutEnable.value = false;
                               controller.isAboutEnable.refresh();
+                              controller.getDataFromAI();
 
-                              controller.aboutTextEditingController.text = "I am ${controller.profileDetailsModel?.name??""} from ${controller.profileDetailsModel?.city??""}. \nContact Details:\nMob:${controller.profileDetailsModel?.mobileNumber??""}\nEmail:${controller.profileDetailsModel?.email??""}";
+                              // controller.aboutTextEditingController.text = "I am ${controller.profileDetailsModel?.name??""} from ${controller.profileDetailsModel?.city??""}. \nContact Details:\nMob:${controller.profileDetailsModel?.mobileNumber??""}\nEmail:${controller.profileDetailsModel?.email??""} additional details:He is Flutter Developer with 2.3 years of experience.";
 
                               // NavigationServices(context).gotoTabScreen();
                             },
